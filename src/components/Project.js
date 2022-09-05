@@ -7,7 +7,8 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import ListGroup from 'react-bootstrap/ListGroup';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import { db } from '../db';
 import HeaderNav from './HeaderNav';
@@ -30,9 +31,13 @@ const Project = ({ loadProject, project, counters, addCounter }) => {
     closeModal();
   }
 
-  const addButton = () => {
-    return(<Button onClick={ () => openModal() } variant='outline-primary'>Add</Button>)
-  }
+  const addButton = (
+    <Button 
+      onClick={ () => openModal() }
+      variant='outline-primary'>
+        <FontAwesomeIcon icon={faPlus} />
+    </Button>
+  )
 
   const closeModal = () => {
     setModalVisible(false);
@@ -40,6 +45,13 @@ const Project = ({ loadProject, project, counters, addCounter }) => {
 
   const openModal = () => {
     setModalVisible(true);
+  }
+
+  const detectEnter = (e) => {
+    e.preventDefault();
+    if(e.key == "Enter"){
+      prepareCounter();
+    }
   }
 
   useEffect(()=>{
@@ -56,8 +68,11 @@ const Project = ({ loadProject, project, counters, addCounter }) => {
           <Form.Group>
             <Form.Control 
               value={counterName}
-              onChange={ (event) => handleChange(event) } type="text"
-              placeholder='Enter a counter name' />
+              onChange={ (event) => handleChange(event) }
+              onKeyUp={ (event) => detectEnter(event) }
+              type="text"
+              placeholder='Enter a counter name'
+            />
           </Form.Group>
         </Form>
       </Modal.Body>
@@ -74,7 +89,7 @@ const Project = ({ loadProject, project, counters, addCounter }) => {
 
   return (
     <>
-      <HeaderNav button={addButton()} />
+      <HeaderNav button={addButton} />
       { counterModal }
       <Container>
         <Row>

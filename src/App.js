@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Routes, Route, Link } from "react-router-dom";
-import Button from "react-bootstrap/Button"
+import "bootswatch/dist/sketchy/bootstrap.min.css";
 
 import Projects from './components/Projects';
 import Project from './components/Project';

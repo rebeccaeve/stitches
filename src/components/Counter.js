@@ -8,7 +8,7 @@ import Form from 'react-bootstrap/Form';
 
 import { saveCounter, deleteCounter } from "../thunks";
 
-const Counter = ( {c, saveCounter} ) => {
+const Counter = ({ c, saveCounter, deleteCounter }) => {
   const [thecount, setCount] = useState(c.stitch_count);
   const [editing, setEditing] = useState(false);
   const [label, setLabel] = useState(c.label);

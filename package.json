@@ -1,6 +1,6 @@
 {
   "name": "stitches",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "homepage": "/stitches",
   "dependencies": {
@@ -13,6 +13,7 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.0",
+    "bootswatch": "^5.2.0",
     "dexie": "^3.2.2",
     "dexie-react-hooks": "^1.1.1",
     "react": "^18.2.0",
