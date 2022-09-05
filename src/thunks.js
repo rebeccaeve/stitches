@@ -25,3 +25,24 @@ export const addCounter = (counter) => async (dispatch, getState) => {
   await db.counters.add(counter)
   dispatch ( loadProject(counter.project_id) );
 }
+
+export const deleteCounter = (counter) => async (dispatch, getState) => {
+  console.log(counter);
+  // await db.counters.put(counter);
+
+  // dispatch( loadProject(counter.project_id) );
+}
+
+export const saveCounter = (counter) => async (dispatch, getState) => {
+  console.log(counter);
+  await db.counters.put(counter);
+
+  dispatch( loadProject(counter.project_id) );
+}
+
+// export const deleteCounter = (counter) => async (dispatch, getState) => {
+//   console.log(counter);
+//   // await db.counters.delete(counter.counter_id);
+
+//   // dispatch( loadProject(counter.project_id) );
+// }

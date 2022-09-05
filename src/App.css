@@ -28,6 +28,11 @@
   color: #61dafb;
 }
 
+.counter-label{
+  font-size: 22pt;
+  font-weight: bold;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
