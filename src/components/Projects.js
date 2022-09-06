@@ -58,17 +58,13 @@ const Projects = ({ getProjects, projects, addProject }) => {
           <Modal.Title>Add a New Project</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
-            <Form.Group>
-              <Form.Control
-                value={projectName}
-                onChange={ (event) => handleChange(event) }
-                onKeyUp={ (event) => detectEnter(event) }
-                type="text"
-                placeholder='Enter a project name'
-              />
-            </Form.Group>
-          </Form>
+          <Form.Control
+            value={projectName}
+            onChange={ (event) => handleChange(event) }
+            onKeyUp={ (event) => detectEnter(event) }
+            type="text"
+            placeholder='Enter a project name'
+          />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={() => closeModal()}>

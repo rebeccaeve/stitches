@@ -14,7 +14,9 @@ const Counter = ({ c, saveCounter, deleteCounter }) => {
   const [label, setLabel] = useState(c.label);
 
   const updateCounter = (amt) => {
-    setCount( (amt) < 0 ? 0 : parseInt(amt));
+    amt = (amt) < 0 ? 0 : parseInt(amt);
+    setCount(amt);
+    saveCounter({...c, stitch_count: amt});
   }
 
   const handleChange = (event) => {

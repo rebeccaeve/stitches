@@ -27,7 +27,6 @@ export const addCounter = (counter) => async (dispatch, getState) => {
 }
 
 export const saveCounter = (counter) => async (dispatch, getState) => {
-  console.log(counter);
   await db.counters.put(counter);
 
   dispatch( loadProject(counter.project_id) );
